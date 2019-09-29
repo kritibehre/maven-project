@@ -24,18 +24,30 @@ pipeline {
                   }
                                  
         }
-	    {
 	    
-	    stage ('deploy to tomcat') {
+	     stage ('Package Stage') {
 
 
-steps {
-  sshagent (['18.222.20.202']) {
-    sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@18.222.20.202:/var/lib/tomcat/webapps'
-      }
-}
-}
-}
-		}
+            steps {
+                withMaven(maven : 'LocalMaven')
+                {
+                    sh 'mvn Package'
+                }
+                  }
+                                 
+        }
+	    
+	       stage ('install Stage') {
+
+
+            steps {
+                withMaven(maven : 'LocalMaven')
+                {
+                    sh 'mvn install'
+                }
+                  }
+                                 
+        }
+	   
 		}
 		
