@@ -14,9 +14,9 @@ pipeline
        	{
 			steps
 				{
-					withMaven(jdk: 'myjdk', maven: 'mymaven') 
+					withMaven(maven: 'LocalMaven')
 					{
-						sh "mvn clean install package"
+						sh 'mvn clean package install'
 					}
 				}
 		}
