@@ -3,12 +3,13 @@ pipleline
     agent any 
         stages
           {
-             stage ('scm checkout'){
-	     step
-              {
-               git 'https://github.com/kritibehre/maven-project.git'
-              }
-	      }
+             stage ('scm checkout')
+	     	{
+	     		steps
+             		 {
+               			git 'https://github.com/kritibehre/maven-project.git'
+              		 }
+	        }
             
            }
   }
