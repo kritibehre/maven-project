@@ -1,0 +1,21 @@
+  
+pipleline 
+  {
+    agent any 
+      {
+        stages
+          {
+             stage "scm checkout"
+              {
+                git 'https://github.com/prakash0301/maven-project.git'
+              }
+             stage "compile"
+              {
+                withMaven(maven: 'LocalMaven') 
+			            {
+				            sh 'mvn test'
+			            }
+              }
+           }
+      }
+  }
