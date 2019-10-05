@@ -1,20 +1,14 @@
 pipleline 
   {
     agent any 
-      {
         stages
           {
-             stage "scm checkout"
+             stage ('scm checkout'){
+	     step
               {
                 git 'https://github.com/kritibehre/maven-project.git'
               }
-             stage "compile"
-              {
-                withMaven(maven: 'LocalMaven') 
-			            {
-				            sh 'mvn test'
-			            }
-              }
+	      }
+            
            }
-      }
   }
