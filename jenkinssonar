@@ -7,7 +7,7 @@ pipleline
           {
              stage "scm checkout"
               {
-                git 'https://github.com/prakash0301/maven-project.git'
+                git 'https://github.com/kritibehre/maven-project.git'
               }
              stage "compile"
               {
