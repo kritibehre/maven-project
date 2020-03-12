@@ -7,7 +7,7 @@ pipeline
 						{
 							steps
 								{ 
-									git branch: 'master', 'url: "https://github.com/kritibehre/maven-project.git"'
+									git branch: 'master', url: 'https://github.com/kritibehre/maven-project.git'
 
 								}
 						}
