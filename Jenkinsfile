@@ -16,7 +16,7 @@ pipeline
 						{
 							steps
 								{
-									withMaven(jdk: 'localjdk-1.8', maven: 'localmaven') 
+									withMaven(maven: 'localmaven') 
 										{
 											sh 'mvn validate'
 										}
@@ -27,7 +27,7 @@ pipeline
 						{
 							steps
 								{
-									withMaven(jdk: 'localjdk-1.8', maven: 'localmaven') 
+									withMaven(maven: 'localmaven') 
 										{
 											sh 'mvn test'
 										}
